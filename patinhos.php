@@ -1,40 +1,28 @@
 <?php
 
-    $_numero_de_patos = 3;
+    $_numero_de_patos = 4;
     
     if(is_int($_numero_de_patos)) {
         if($_numero_de_patos > 0 && $_numero_de_patos < 10) {
             for($i = $_numero_de_patos; $i > 0; $i--) {
-                if( $i == 1) {
-                    echo "$i patinho
-                    Foi passear
-                    Além das montanhas
-                    Para brincar
+                echo $i != 1 ? "$i patinhos foram passear <br>" : "$i patinho foi passear <br>";                
+                echo "Alem das montanhas<br>";
+                echo "Para brincar<br>";
+                echo "A mamae gritou: Quá, quá, quá, quá<br>";
+
+                switch($i) {
+                    case $i > 2:
+                        echo "Mas só " . ($i - 1) . " patinhos voltaram de lá.<br>";
+                    break;
+                    case 2:
+                        echo "Mas só " . ($i - 1) .  " patinho voltou de lá.<br>";
+                    break;
                     
-                    A mamãe gritou
-                    Quá, quá, quá, quá
-                    Mas nenhum patinho
-                    Voltou de lá <br>";
-                } else if ($i == 2) {
-                    $menos_um = $i - 1; 
-                    echo "$i patinhos
-                    Foram passear
-                    Além das montanhas
-                    Para brincar
-                    
-                    A mamãe gritou
-                    Quá, quá, quá, quá
-                    Mas só $menos_um patinho
-                    Voltou de lá<br>";           
-                } else {
-                    $menos_um = $i - 1; 
-                    echo "$i patinhos Foram passear Além das montanhas Para brincar
-                    
-                    A mamãe gritou
-                    Quá, quá, quá, quá
-                    Mas só $menos_um patinhos
-                    Voltaram de lá<br>";
+                    case 1:
+                        echo "Mas nehum patinho voltou de lá.<br>";
+                    break;
                 }
+
             }
 
             echo "A mamãe patinha
@@ -45,7 +33,7 @@
             A mamãe gritou
             Quá, quá, quá, quá!
             E os $_numero_de_patos patinhos
-            Voltaram de lá";
+            Voltaram de lá.";
 
         } else {
             echo "Valor deve ser maior que 0 e menor que 10";
